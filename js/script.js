@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('task-input');
     const addTaskBtn = document.getElementById('add-task-btn');
     const tasks = document.getElementById('tasks');
 
-    addTaskBtn.addEventListener('click', function() {
+    addTaskBtn.addEventListener('click', function () {
         const taskText = taskInput.value.trim();
         if (taskText !== '') {
             addTask(taskText);
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Eliminar';
-        deleteBtn.addEventListener('click', function() {
+        deleteBtn.addEventListener('click', function () {
             tasks.removeChild(li);
         });
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 //Almacenamiento en localStorage
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('task-input');
     const addTaskBtn = document.getElementById('add-task-btn');
     const tasks = document.getElementById('tasks');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar tareas desde LocalStorage
     loadTasks();
 
-    addTaskBtn.addEventListener('click', function() {
+    addTaskBtn.addEventListener('click', function () {
         const taskText = taskInput.value.trim();
         if (taskText !== '') {
             addTask(taskText);
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Eliminar';
-        deleteBtn.addEventListener('click', function() {
+        deleteBtn.addEventListener('click', function () {
             tasks.removeChild(li);
             removeTask(taskText);
         });
@@ -66,21 +66,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadTasks() {
         let taskList = JSON.parse(localStorage.getItem('tasks')) || [];
-        taskList.forEach(function(task) {
+        taskList.forEach(function (task) {
             addTask(task);
         });
     }
 
     function removeTask(taskText) {
         let taskList = JSON.parse(localStorage.getItem('tasks')) || [];
-        taskList = taskList.filter(function(task) {
+        taskList = taskList.filter(function (task) {
             return task !== taskText;
         });
         localStorage.setItem('tasks', JSON.stringify(taskList));
     }
 });
 //Notificaciones
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // ... (código anterior)
 
     function notifyUser(taskText) {
@@ -108,3 +108,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ejemplo de uso:
     // setRecurrentTask('Ejemplo de tarea recurrente', 60000); // Notifica cada minuto
 });
+
+//---------------------------------Logica del Juego TA TE TI ---------------------
+const STATUS_DISPLAY = document.querySelector('.game-notification'),
+    GAME_STATE = ['', '', '', '', '', '', '', '', ''],
+    WINNINGS = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ],
+    WIN_MESSAGE = () => `El jugador ${currentPlayer} ha ganado`,
+    DRAW_MESSAGE = () => `El juego ha terminado en empate!`,
+    CURRENT_PLAYER_TURN = () => `Turno del Jugador ${currentPlayer}`
+//+++++++++++++++++++++++++++++VARIABLES +++++++++++++++++++++++++++++
+let gameActive = true,
+    currentPlayer = 'O'
+//------------------------------FUNCIONES ---------------------------
+function main() {
+    handleStatusDisplay(CURRENT_PLAYER_TURN);
+    listeners()
+}
+
+main()
+
+function handleStatusDisplay(message) {
+    STATUS_DISPLAY.innerHTML = message
+}
+
+function listeners() {
+    document.querySelector('.game-container').addEventListener('click', handleCellClick)
+    document.querySelector('.game-restart').addEventListener('click', handleRestartGame)
+}
+
+function handleCellClick(clickedEvent) {
+    const clickedCell = clickedEvent.target
+    if (clickedCell.classList.contains('game-cell')) {
+        const clickedCellIndex = Array.from(clickedCell.parentNode.children).indexOf(clickedCell)
+        console.log(clickedCellIndex)
+        if (GAME_STATE[clickedCellIndex] !== '' || !gameActive) {
+            return
+        }
+        handleCellPlayed(clickedCell, clickedCellIndex)
+    }
+    console.log(clickedCell)
+}
+function handleCellPlayed(clickedCell, clickedCellIndex) {
+    GAME_STATE[clickedCellIndex] = currentPlayer
+    clickedCell.innerText = currentPlayer
+}
