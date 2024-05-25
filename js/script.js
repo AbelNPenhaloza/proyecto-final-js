@@ -1,3 +1,28 @@
+//--------------------------------- Manejo de dark mode / light mode ---------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('darkModeToggle');
+    const body = document.body;
+  
+    // Cargar el modo guardado del localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      toggleButton.textContent = 'Modo Claro';
+    }
+  
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+  
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        toggleButton.textContent = 'Modo Claro';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        toggleButton.textContent = 'Modo Oscuro';
+      }
+    });
+  });
+
+  //--------------------------------- Manejo lógica de Aplicación de Tareas ---------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('task-input');
     const addTaskBtn = document.getElementById('add-task-btn');
@@ -109,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // setRecurrentTask('Ejemplo de tarea recurrente', 60000); // Notifica cada minuto
 });
 
-//---------------------------------Logica del Juego TA TE TI ---------------------
+//--------------------------------- Lógica del Juego TA TE TI ---------------------------------
 const STATUS_DISPLAY = document.querySelector('.game-notification'),
     GAME_STATE = ['', '', '', '', '', '', '', '', ''],
     WINNINGS = [

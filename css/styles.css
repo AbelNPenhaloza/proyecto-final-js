@@ -1,8 +1,22 @@
+/* Estilo modo claro (default) */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: white;
     margin: 10px;
     padding: 0;
+    color: black;
+}
+  
+/* Estilo modo oscuro */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.btn-dark-mode {
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }
 
 .container {
@@ -22,9 +36,13 @@ header {
 header h1 {
     text-align: center;
     margin: 0;
+    font-family: "Luckiest Guy", cursive;
     font-size: 2em;
 }
 
+main p {
+    font-family: "Kanit", sans-serif;
+}
 .task-form {
     display: flex;
     justify-content: center;
@@ -34,18 +52,9 @@ header h1 {
 .task-form input {
     width: 300px;
     padding: 10px;
+    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.task-form button {
-    padding: 10px;
-    background: #0779e4;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 10px;
 }
 
 .task-list {
@@ -103,3 +112,16 @@ a {
     line-height: 100px;
     font-size: 60px;
 }
+
+------------ FONTS ------------
+.luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .kanit-semibold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
