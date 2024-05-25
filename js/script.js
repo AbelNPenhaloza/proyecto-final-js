@@ -123,13 +123,18 @@ const STATUS_DISPLAY = document.querySelector('.game-notification'),
         [0, 4, 8],
         [2, 4, 6]
     ],
-    WIN_MESSAGE = () => `El jugador ${currentPlayer} ha ganado!`,
+    
+    WIN_MESSAGE = () => `${currentPlayer} ha ganado el juego!`,
     DRAW_MESSAGE = () => `El juego ha terminado en empate!`,
-    CURRENT_PLAYER_TURN = () => `Turno del jugador ${currentPlayer}`
+    CURRENT_PLAYER_TURN = () => `Turno de ${currentPlayer}`
 
 // Variables
-let gameActive = true,
-    currentPlayer = 'O'
+let gameActive = true;
+const PLAYER_SYMBOLS = {
+    [player1]: 'O',
+    [player2]: 'X'
+};
+let currentPlayer = player1;
 
 // Funciones
 function main() {
@@ -148,7 +153,7 @@ function handleStatusDisplay(message) {
 
 function handleRestartGame() {
     gameActive = true
-    currentPlayer = "X"
+    currentPlayer = player1;
     restartGameState()
     handleStatusDisplay(CURRENT_PLAYER_TURN())
     document.querySelectorAll('.game-cell').forEach(cell => cell.innerHTML = "")
@@ -169,7 +174,7 @@ function handleCellClick(clickedCellEvent) {
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
     GAME_STATE[clickedCellIndex] = currentPlayer
-    clickedCell.innerHTML = currentPlayer
+    clickedCell.innerHTML = PLAYER_SYMBOLS[currentPlayer];
 }
 
 function handleResultValidation() {
@@ -206,7 +211,7 @@ function handleResultValidation() {
 }
 
 function handlePlayerChange() {
-    currentPlayer = currentPlayer === "X" ? "O" : "X"
+    currentPlayer = currentPlayer === player1 ? player2 : player1
     handleStatusDisplay(CURRENT_PLAYER_TURN())
 }
 
