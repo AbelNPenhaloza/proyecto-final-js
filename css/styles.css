@@ -70,7 +70,16 @@ header h1 {
     justify-content: space-between;
     width: 410px;
 }
-
+.task-list button {
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: white; /* Color de texto blanco */
+    border-radius: 3px; /* Sin borde */
+    border: none;
+    padding: 5px 10px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero */
+    margin-left: 10px; /* Espaciado izquierdo */
+  }
+  
 a {
     color: #0779e4;
     text-decoration: none;
