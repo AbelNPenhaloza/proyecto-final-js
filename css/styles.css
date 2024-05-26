@@ -1,8 +1,48 @@
+/* Estilo modo claro (default) */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: white;
     margin: 10px;
     padding: 0;
+    color: black;
+}
+  
+/* Estilo modo oscuro */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .btn-outline-success,
+body.dark-mode .btn-outline-primary,
+body.dark-mode .btn-outline-secondary {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode .btn-outline-success:hover{
+    background-color: green;
+    color: white;
+    border-color: #e6e6e6;
+
+}
+
+body.dark-mode .btn-outline-secondary:hover{
+    background-color: gray;
+    color: white;
+    border-color: #e6e6e6;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: blue;
+    color: white;
+    border-color: #e6e6e6;
+}
+
+.btn-dark-mode {
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }
 
 .container {
@@ -15,6 +55,7 @@ header {
     background: #629ccb;
     color: #fff;
     padding-top: 30px;
+    padding-bottom: 10px;
     min-height: 70px;
     border-bottom: #0779e4 3px solid;
 }
@@ -22,9 +63,13 @@ header {
 header h1 {
     text-align: center;
     margin: 0;
+    font-family: "Luckiest Guy", cursive;
     font-size: 2em;
 }
 
+main p {
+    font-family: "Kanit", sans-serif;
+}
 .task-form {
     display: flex;
     justify-content: center;
@@ -34,18 +79,9 @@ header h1 {
 .task-form input {
     width: 300px;
     padding: 10px;
+    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.task-form button {
-    padding: 10px;
-    background: #0779e4;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 10px;
 }
 
 .task-list {
@@ -61,37 +97,40 @@ header h1 {
     background: #fff;
     margin: 5px 0;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid black;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
 }
 
-a {
-    color: #0779e4;
-    text-decoration: none;
-    text-align: right;
-    display: block;
+body.dark-mode .task-list li {
+    background: none;
+    border: 1px solid white;
+    color: white;
 }
 
 /*Section del Tic Tac Toe*/
-.container {
-    text-align: center;
+.menu {
+    background: #b5b8c6;
+    color: #fff;
+    padding: 30px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+    margin-top: 50px;
 }
-
-.section-juego {
+.section-juego{
     text-align: center;
     margin-top: 60px;
 }
 
-.game-container {
+.game-container{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 306px;
     margin: 50px auto;
 }
 
-.game-cell {
+.game-cell{
     width: 100px;
     height: 100px;
     box-shadow: 0 0 0 1px black;
@@ -101,11 +140,20 @@ a {
     font-size: 60px;
 }
 
-.menu {
-    background: #b5b8c6;
-    color: #fff;
-    padding: 30px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
-    margin-top: 50px;
+/* Grilla del juego Ta-Te-Ti en modo oscuro */
+body.dark-mode .game-cell {
+    border: 1px solid white; /* Mantiene el borde negro */
 }
+
+------------ FONTS ------------
+.luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .kanit-semibold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
