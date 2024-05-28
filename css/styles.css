@@ -1,28 +1,45 @@
+html,
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 10px;
+    margin: 0;
+    /* Asegúrate de que no haya márgenes */
     padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    flex: 1;
 }
 
 header {
-    background: #629ccb;
+    background: #009de0;
     color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
+
+
     border-bottom: #0779e4 3px solid;
+    height: 170px;
 }
 
-header h1 {
+h1 {
     text-align: center;
     margin: 0;
     font-size: 2em;
+    font-size: large;
+    color: #333;
+    padding-top: 50px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .task-form {
@@ -69,17 +86,24 @@ header h1 {
     display: flex;
     justify-content: space-between;
     width: 410px;
+ header-footer-js
 }
+
 .task-list button {
-    background-color: #dc3545; /* Color de fondo rojo */
-    color: white; /* Color de texto blanco */
-    border-radius: 3px; /* Sin borde */
+    background-color: #dc3545;
+    /* Color de fondo rojo */
+    color: white;
+    /* Color de texto blanco */
+    border-radius: 3px;
+    /* Sin borde */
     border: none;
-    padding: 5px 10px; /* Espaciado interno */
-    cursor: pointer; /* Cursor de puntero */
-    margin-left: 10px; /* Espaciado izquierdo */
-  }
-  
+    padding: 5px 10px;
+    /* Espaciado interno */
+    cursor: pointer;
+    /* Cursor de puntero */
+    margin-left: 10px;
+    /* Espaciado izquierdo */
+
 a {
     color: #0779e4;
     text-decoration: none;
@@ -102,16 +126,18 @@ a {
     grid-template-columns: repeat(3, auto);
     width: 306px;
     margin: 50px auto;
+ 
 }
 
 .game-cell {
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 0 1px black;
-    border: 1px solid black;
+    border: 1px solid rgb(146, 146, 146);
     cursor: pointer;
     line-height: 100px;
-    font-size: 60px;
+    font-size: 60px; 
+    box-shadow: 2px 2px 2px  #a9a9a9;
+    border-radius: 5px;
 }
 
 .menu {
@@ -121,4 +147,18 @@ a {
     min-height: 70px;
     border-bottom: #0779e4 3px solid;
     margin-top: 50px;
+}
+
+main {
+    flex: 1;
+    /* Hace que el main tome todo el espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+
+    margin: 32px;
 }
