@@ -1,3 +1,25 @@
+//------------Header y Footer desde el js---------------
+
+document.querySelector('header').innerHTML = `
+<div data-aos="flip-left"
+data-aos-easing="ease-out-cubic"
+data-aos-duration="2000">
+<a href="index.html"> <img class="d-block mx-auto mb-4" src="./img/cilsa.jpg" alt="logo" height="155"></a>
+</div>    
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+`;
+
+// Insertar el contenido del pie de página
+document.querySelector('footer').innerHTML = `
+    <div class="mapa-sitio">
+<h6>Desarollado por Valeria, Abel y Paola Fraticola</h6>
+    </div>
+    
+
+`;
+
+
 //-------------Codigo JS para la Lista de Tareas---------------
 
 // Cuando el contenido de la página esté completamente cargado...
@@ -93,7 +115,7 @@ const STATUS_DISPLAY = document.querySelector('.game-notification'),
         [0, 4, 8],
         [2, 4, 6]
     ],
-    
+
     WIN_MESSAGE = () => `${currentPlayer} ha ganado el juego!`,
     DRAW_MESSAGE = () => `El juego ha terminado en empate!`,
     CURRENT_PLAYER_TURN = () => `Turno de ${currentPlayer}`
