@@ -74,7 +74,6 @@ footer {
 .task-list ul {
     list-style: none;
     padding: 0;
-    
 }
 
 .task-list li {
@@ -86,7 +85,6 @@ footer {
     display: flex;
     justify-content: space-between;
     width: 410px;
-
 }
 
 .task-list button {
@@ -103,6 +101,7 @@ footer {
     /* Cursor de puntero */
     margin-left: 10px;
     /* Espaciado izquierdo */
+}
 
 a {
     color: #0779e4;

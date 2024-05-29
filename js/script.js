@@ -1,4 +1,4 @@
-//------------Header y Footer desde el js---------------
+//------------Header y Footer desde el js
 
 document.querySelector('header').innerHTML = `
 <div data-aos="flip-left"
