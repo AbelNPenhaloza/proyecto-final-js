@@ -215,4 +215,3 @@ function restartGameState() {
 }
 
 main()
-//final de todo el script
