@@ -1,163 +1,189 @@
 html,
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    /* Asegúrate de que no haya márgenes */
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    flex: 1;
-}
-
-header {
-    background: #009de0;
-    color: #fff;
-
-
-    border-bottom: #0779e4 3px solid;
-    height: 170px;
-}
-
-h1 {
-    text-align: center;
-    margin: 0;
-    font-size: 2em;
-    font-size: large;
-    color: #333;
-    padding-top: 50px;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.task-form {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-.task-form input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.task-form button {
-    padding: 10px;
-    background: #0779e4;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 10px;
-}
-
-.task-list {
-    margin: 20px;
-    width: 300px;
-    justify-content: center;
-}
-
-.task-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.task-list li {
-    background: #fff;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    width: 410px;
-}
-
-.task-list button {
-    background-color: #dc3545;
-    /* Color de fondo rojo */
-    color: white;
-    /* Color de texto blanco */
-    border-radius: 3px;
-    /* Sin borde */
-    border: none;
-    padding: 5px 10px;
-    /* Espaciado interno */
-    cursor: pointer;
-    /* Cursor de puntero */
-    margin-left: 10px;
-    /* Espaciado izquierdo */
-}
-
-a {
-    color: #0779e4;
-    text-decoration: none;
-    text-align: right;
-    display: block;
-}
-
-/*Section del Tic Tac Toe*/
-.container {
-    text-align: center;
-}
-
-.section-juego {
-    text-align: center;
-    margin-top: 60px;
-}
-
-.game-container {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 306px;
-    margin: 50px auto;
- 
-}
-
-.game-cell {
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgb(146, 146, 146);
-    cursor: pointer;
-    line-height: 100px;
-    font-size: 60px; 
-    box-shadow: 2px 2px 2px  #a9a9a9;
-    border-radius: 5px;
-}
-
-.menu {
-    background: #b5b8c6;
-    color: #fff;
-    padding: 30px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
-    margin-top: 50px;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  color: black;
+  flex-direction: column;
 }
 
 main {
-    flex: 1;
-    /* Hace que el main tome todo el espacio disponible */
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  flex: 1; /* Hace que el main tome todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: white;
+  color: black;
+}
+
+.btn {
+  color: black;
+  border-color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode main {
+  background-color: black;
+}
+
+.dark-mode .card {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .btn {
+  color: white;
+  border-color: white;
+}
+
+.dark-mode input {
+  background-color: #555;
+  color: white;
+  border: 1px solid #777;
+}
+
+.dark-mode input::placeholder {
+  color: #ccc;
+}
+
+.dark-mode .task-list li {
+  background-color: #fff; /* Fondo blanco */
+  color: black; /* Texto negro */
+}
+
+header {
+  background: #009de0;
+  color: #fff;
+  border-bottom: #0779e4 3px solid;
+  height: 170px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: large;
+  color: #333;
+  padding-top: 50px;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.task-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.task-form input {
+  width: 284px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-form button {
+  padding: 10px;
+  background: #0779e4;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 7px;
+}
+
+.task-list {
+  margin: 20px;
+  width: 300px;
+  justify-content: center;
+}
+
+.task-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  width: 410px;
+}
+
+.task-list button {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+a {
+  color: #0779e4;
+  text-decoration: none;
+  text-align: right;
+  display: block;
+}
+
+/* Tic Tac Toe */
+.container {
+  text-align: center;
+}
+
+.section-juego {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 306px;
+  margin: 50px auto;
+}
+
+.game-cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(146, 146, 146);
+  cursor: pointer;
+  line-height: 100px;
+  font-size: 60px;
+  box-shadow: 2px 2px 2px #a9a9a9;
+  border-radius: 5px;
+}
+
+.menu {
+  background: #b5b8c6;
+  color: #fff;
+  padding: 30px;
+  min-height: 70px;
+  border-bottom: #0779e4 3px solid;
+  margin-top: 50px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-
-    margin: 32px;
+  display: flex;
+  justify-content: center;
+  margin: 32px;
 }

@@ -13,22 +13,56 @@
         <title>Ta-Te-Ti Online</title>
     </head>
     <body>
-        <header>
-
-        </header>
-
+        <header></header>
+       
         <script>
         AOS.init();
         </script>
+        <button id="modeButton" onclick="claroOscuro()">Modo Oscuro</button>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              if (localStorage.getItem("darkMode") === "true") {
+                  document.body.classList.add("dark-mode");
+                  document.getElementById("modeButton").textContent = "Modo Claro";
+              } else {
+                  document.getElementById("modeButton").textContent = "Modo Oscuro";
+              }
+          });
+    
+          function claroOscuro() {
+              var element = document.body;
+              var isDarkMode = element.classList.toggle("dark-mode");
+              var button = document.getElementById("modeButton");
+              if (isDarkMode) {
+                  button.textContent = "Modo Claro";
+                  localStorage.setItem("darkMode", "true");
+              } else {
+                  button.textContent = "Modo Oscuro";
+                  localStorage.setItem("darkMode", "false");
+              }
+          }
+      </script>
         <main>
-
-            <div class="card mt-5 mx-auto" style="width: 30rem">
-                <h1>Juguemos al TA TE TI</h1>
+            <a href="index.html"><button class="btn btn-outline-success btn-md m-2" type="button">Volver al Index</button></a>
+          <h1>Juguemos al TA TE TI</h1> 
+           <div class="card mt-3 mx-auto" style="width: 30rem">
+                
                 <script>
-            // Pedimos los nombres de los jugadores
-            var player1 = prompt('¡Bienvenidos/as! Ingrese el nombre del jugador 1:');
-            var player2 = prompt('Ingrese el nombre del jugador 2:');
-        </script>
+                // Pedimos los nombres de los jugadores
+                var player1 = prompt('¡Bienvenidos/as! Ingrese el nombre del jugador 1:');
+                var player2 = prompt('Ingrese el nombre del jugador 2:');
+                if (player1 === '') {
+                    player1 = 'Jugador 1';
+                }
+                if (player2 === '') {
+                    player2 = 'Jugador 2';
+                };
+                if (player1 === player2) {
+                    alert('¡Los nombres de los jugadores no pueden ser iguales! Por favor utiliza alguna inicial distintiva para diferenciarlos.');
+                    //recargar la página para que pida nuevamente los nombres de los jugadores
+                    location.reload();
+                };
+                </script>
                 <section class="section-juego">
                     <div class="game-container">
                         <div class="game-cell" data-index="0"></div>
@@ -43,12 +77,12 @@
                     </div>
                     <h3 class="game-notification"></h3>
                     <div class="button-container" >
-                        <button class="btn btn-primary rounded-pill px-3 btn-lg"
+                        <button class="btn btn-primary rounded-pill px-3 m-1 btn-lg"
                             id="restartGameState"
                             type="button">Reestablecer</button>
                         <a href="tateti.html">
                             <button
-                                class="btn btn-primary rounded-pill px-3 btn-lg"
+                                class="btn btn-primary rounded-pill px-3 m-1 btn-lg"
                                 type="button">Nuevos Jugadores</button>
                         </a>
 

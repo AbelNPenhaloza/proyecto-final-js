@@ -16,18 +16,46 @@
   </head>
   <body>
 
-    <header>
-
-    </header>
-
+    <header></header>
+   
     <script>
       AOS.init();
     </script>
+    <button id="modeButton" onclick="claroOscuro()">Modo Oscuro</button>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          if (localStorage.getItem("darkMode") === "true") {
+              document.body.classList.add("dark-mode");
+              document.getElementById("modeButton").textContent = "Modo Claro";
+          } else {
+              document.getElementById("modeButton").textContent = "Modo Oscuro";
+          }
+      });
+
+      function claroOscuro() {
+          var element = document.body;
+          var isDarkMode = element.classList.toggle("dark-mode");
+          var button = document.getElementById("modeButton");
+          if (isDarkMode) {
+              button.textContent = "Modo Claro";
+              localStorage.setItem("darkMode", "true");
+          } else {
+              button.textContent = "Modo Oscuro";
+              localStorage.setItem("darkMode", "false");
+          }
+      }
+  </script>
+
+
+
+
+
+
     <div class="container">
       <main>
         <div class="px-4 py-5 my-5 text-center">
 
-          <h1 class="display-5 fw-bold text-body-emphasis">Bienvenido a tu menú de acceso <br>al Planificador y al juego.</h1>
+          <h1 >Bienvenido a tu menú de acceso <br>al Planificador y al juego.</h1>
           <div class="col-lg-6 mx-auto"><br>
             <h2 >Elija una opción</h2><br>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
@@ -46,9 +74,7 @@
       </main>
     </div> 
     
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="./js/script.js"></script>
   </body>
 </html>
